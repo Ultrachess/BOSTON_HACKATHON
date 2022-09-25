@@ -1,0 +1,36 @@
+[Info]
+name ="SuperLuigi"
+Displayname ="Luigi"
+versiondate =08,08,2006
+author ="ShinRyoga & Neo Ankh"
+Pal.Defaults =4,5,6,7,12,1,2,10,6,3,11,8,9
+mugenversion =06,14,2003
+
+[Files]
+cmd      =Coding/SuperMario.cmd
+cns      =Coding/SuperMario.cns
+st       =Coding/SuperMario.cns
+;st1     =Coding/DOS.cns
+stcommon =common1.cns
+sprite   =Coding/SuperMario.sff
+anim     =Coding/SuperMario.air
+sound    =Sounds/SuperMario2.snd
+pal1=Palettes/SSBBBlue.act
+pal2=Palettes/SSBBOrange.act
+pal3=Palettes/Waluigi.act
+pal4=Palettes/Default.act
+pal5=Palettes/SSBBPink.act
+pal6=Palettes/Fire.act
+pal7=Palettes/MarioColor10.act
+pal8=Palettes/MarioColor11.act
+pal9=Palettes/MarioColor12.act
+pal10=Palettes/MarioColor7.act
+pal11=Palettes/MarioColor8.act
+pal12=Palettes/MarioColor9.act
+st1=Coding/SuperMario1.cns
+st2=Coding/SuperMario1.cns
+
+; Arcade mode
+[Arcade]
+intro.storyboard=
+ending.storyboard=

@@ -1,0 +1,5 @@
+{
+  "fs": {
+    "files": ["fgc_betting.py", "entrypoint.sh"]
+  }
+}

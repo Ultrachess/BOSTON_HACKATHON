@@ -1,0 +1,280 @@
+;---------------------------------------------------------------------------
+[Statedef -2]
+
+;[State -2, Danger!]
+;type = PalFX
+;triggerall = time = 1
+;trigger1 = Life <= lifemax / 4 && life > 0
+;time = -1
+;add = 7,-104,-104
+;mul = 256,256,256
+;sinadd = 0,56,56,15
+;invertall = 0
+;color = 250
+
+[State -2, Self Damage]
+type = AttackMulSet
+trigger1 = Var(32) = 1
+value = 1.5
+
+[State -2, turn off AI]
+type = VarSet
+trigger1 = Life <= 0
+trigger2 = roundstate = 3
+var(59) = 0
+
+[State -2, ]
+type = DisplayToClipboard
+trigger1 = 1
+text = "life=%d,MP=%d, Body-Distance X=%d,Y=%d \n"
+params = Life,Power,floor(P2BodyDist X),floor(P2BodyDist Y)
+
+[State -2, ]
+type = AppendToClipboard
+trigger1 = 1
+text = "Var(18)=%d,P2State=%d,round=%d,P2Life=%d,AI=%d"
+params = Var(18),P2StateNo,RoundNo,P2Life,Var(59)
+
+; [State 0, quitar palfx]
+; type = PalFX
+; triggerall = time = 1
+; trigger1 = life >= 251
+; trigger2 = life = 0
+; time = 0
+;---------------------------------------------------------------------------
+[Statedef -3]
+
+[State -3, Landing Sound]
+type = PlaySnd
+triggerall = Time = 1
+trigger1 = stateno = 52 ;Jump land
+trigger2 = stateno = 106 ;Run-back land
+value = 20, 0
+;---------------------------------------------------------------------------
+
+[State -3, ]
+type = VarSet ;Super invincibility
+Trigger1 = RoundState = 0
+trigger2 = roundsexisted = 0
+v = 30    
+value = 1 ;0 = off, 1 = on
+
+[State -3, ]
+type = VarSet ;Flashy background during super 
+Trigger1 = RoundState = 0
+trigger2 = roundsexisted = 0
+v = 31    
+value = 0 ;0 = off, 1 = on - by default turned off for your eyes
+
+[State -3, ]
+type = VarSet ;Self damage, but increase damage output
+Trigger1 = RoundState = 0
+trigger2 = roundsexisted = 0 
+v = 32
+value = 0 ;0 = off, 1 = on
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;----------------------------------------------------------------------------
+;			Rare Screen
+;		If this is displayed, DO NOT SKIP
+;	 Inspired by Five Nights at Treasure Island 2020
+;		  and Anniversary Edition
+;----------------------------------------------------------------------------
+[Statedef 818]
+type = S
+Ctrl = 0
+anim = 81818
+
+[State 18,]
+type=Helper
+triggerall = numhelper(18)=0
+trigger1=time=0
+helpertype=normal
+name="Rare_Screen"
+ID=18
+stateno=18
+pos=0,0
+postype=p1
+ownpal=1
+supermovetime=65535
+pausemovetime=65535
+ignorehitpause=1
+
+[State 0, Blank Background]
+type = Explod
+trigger1 = time = 0
+anim = 18
+ID = 19
+pos = 160,120
+postype = left
+bindtime = -1
+removetime = 1080
+supermovetime = 1080
+pausemovetime = 1080
+scale = 1,1
+sprpriority = 2
+ontop = 1
+ownpal = 1
+
+[State 0, Rare Screen]
+type = Explod
+trigger1 = time = 0
+anim = ifelse(random<500,8181,8182+random%5)
+ID = 18
+pos = 160,120
+postype = left
+bindtime = -1
+removetime = 1080
+supermovetime = 1080
+pausemovetime = 1080
+scale = 1,1
+sprpriority = 4
+ontop = 1
+ownpal = 1
+
+[State 0, Static]
+type = Explod
+trigger1 = time = 0
+anim = 818
+ID = 20
+pos = 160,120
+postype = left
+bindtime = -1
+removetime = 1080
+supermovetime = 1080
+pausemovetime = 1080
+scale = 1,1
+sprpriority = 65535
+ontop = 1
+ownpal = 1
+
+[state 18, ]
+type = changestate
+trigger1 = time = 0
+value = 0
+
+;----------------------------------------------------------------------------
+[Statedef 18]
+type    = S
+movetype= I
+physics = N
+velset = 0,0
+anim = 81818
+ctrl = 0
+
+[State 18, ]
+type = AssertSpecial
+trigger1 = 1
+flag = noFG
+flag2 = nokoslow
+flag3 = nomusic
+
+[State 18, ]
+type = AssertSpecial
+trigger1 = 1
+flag = nobardisplay
+flag2 = intro
+
+[State 18, Stop all sounds]
+type = StopSnd
+trigger1 = time = 0
+trigger2 = time = 1080
+channel = -1
+
+[State 18, ]
+type = DisplayToClipboard
+trigger1 = 1
+text = "A 3 percent chance." 
+;Admit it, you pressed F4 mutiple times to trigger it, right?
+
+[State 18, Do Not Skip]
+type = SuperPause
+trigger1 = time = 0
+time = 1080 ;Var(20)!=18
+anim = -1
+sound = -1
+movetime = 1080 ;Var(20)!=18
+pausebg = 1
+
+[State 18, Dread]
+type = PlaySnd
+trigger1 = time = 1
+value = S8,18
+channel = 3
+abspan = 0
+loop = 1
+
+[State 18, ]
+type = DestroySelf
+trigger1 = time = 1080
+trigger2 = Roundstate = 2

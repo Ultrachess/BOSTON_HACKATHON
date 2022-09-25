@@ -1,0 +1,27 @@
+[Info]
+name="Pichu" ;"Fixed" Pichu
+displayname="Pichu"
+versiondate=8,28,2022
+mugenversion=04,14,2002
+author="xed (xedarts),Z" ;Edited by Marzavis613
+pal.defaults=1,2,3,4,5,6,7,8,9
+[Files]
+sprite=pichu.sff
+sound=pichu.snd
+anim=pichu.air
+cmd=pichu.cmd
+cns=pichu.cns
+st=pichu.cns
+stcommon=common1.cns
+pal1=act/Pichu1.act
+pal2=act/Pichu2.act
+pal3=act/Pichu3.act
+pal4=act/Pichu4.act
+pal5=act/Pichu5.act
+pal6=act/Pichu6.act
+pal7=act/Pichu7.act
+pal8=act/Pichu8.act
+st1=etc.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

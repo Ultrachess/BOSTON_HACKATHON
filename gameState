@@ -1,0 +1,72 @@
+table: 0xc00082e000 {
+  [match] => table: 0xc00082e000 {
+               [1] => table: 0xc00082e060 {
+                        [1] => table: 0xc0009bc4e0 {
+                                 [name] => "Pichu"
+                                 [id] => 56
+                                 [memberNo] => 0
+                                 [selectNo] => 0
+                                 [teamside] => 0
+                                 [life] => 698
+                                 [lifeMax] => 950
+                                 [winquote] => -1
+                                 [aiLevel] => 8
+                                 [palno] => 1
+                                 [ratiolevel] => 0
+                                 [win] => true
+                                 [winKO] => true
+                                 [winTime] => false
+                                 [winPerfect] => false
+                                 [winSpecial] => false
+                                 [winHyper] => false
+                                 [drawgame] => false
+                                 [ko] => false
+                                 [ko_round_middle] => false
+                                 [firstAttack] => true
+                               }
+                        [2] => table: 0xc0009bc4e0 {
+                                 [name] => "Kung Fu Man"
+                                 [id] => 57
+                                 [memberNo] => 0
+                                 [selectNo] => 1
+                                 [teamside] => 1
+                                 [life] => 0
+                                 [lifeMax] => 1000
+                                 [winquote] => -1
+                                 [aiLevel] => 8
+                                 [palno] => 1
+                                 [ratiolevel] => 0
+                                 [win] => false
+                                 [winKO] => false
+                                 [winTime] => false
+                                 [winPerfect] => false
+                                 [winSpecial] => false
+                                 [winHyper] => false
+                                 [drawgame] => false
+                                 [ko] => true
+                                 [ko_round_middle] => false
+                                 [firstAttack] => false
+                               }
+                      }
+             }
+  [scoreRounds] => table: 0xc00082e000 {
+                     [1] => table: 0xc0009bc840 {
+                              [1] => 35700
+                              [2] => 700
+                            }
+                   }
+  [timerRounds] => table: 0xc00082e000 {
+                     [1] => 2710
+                   }
+  [matchTime] => 2710
+  [roundTime] => 5940
+  [winTeam] => 0
+  [lastRound] => 1
+  [draws] => 0
+  [p1wins] => 1
+  [p2wins] => 0
+  [p1tmode] => 0
+  [p2tmode] => 0
+  [p1score] => 35700
+  [p2score] => 700
+}
